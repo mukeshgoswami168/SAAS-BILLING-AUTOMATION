@@ -43,3 +43,12 @@ export function createUser(email,  navigate) {
      
     }
   }
+
+  export function logout(navigate) {
+    return (dispatch) => {
+      localStorage.removeItem("email")
+      localStorage.removeItem("userId")
+      toast.success("Logged Out")
+      navigate("/")
+    }
+  }
